@@ -20,7 +20,7 @@
 " 
 " * create a *scrum/tasks/* subdirectory.
 " * create a file *scrum/backlog.md* 
-" * Add tasks in *backlog.md* as links, you only need to type tasks names between brackets, hiting *ENTER* will automatically create the associated link and file in where you can enter the detailed user story. Hit *Shift + Enter* to return to the backlog file.
+" * Add tasks in *backlog.md* as links, you only need to type tasks names between brackets, hiting *ENTER* will automatically create the associated link and file in where you can enter the detailed user story. Hit Leader key + ENTER to return to the backlog file.
 " 
 " ```
 " User story|points
