@@ -33,6 +33,7 @@
 " * cut and paste your tasks to sprint-x.md files to plan your sprints
 
 function! ScrumMarkdown()
+  "list of tasks : hide link details
   set conceallevel=3
   
   syn region mkdID matchgroup=mkdDelimiter start="\!?\[" end="\]" contained contains=mkdURLTasksPrefix oneline 
@@ -43,6 +44,11 @@ function! ScrumMarkdown()
   syn match mkdEscapeChar "\\" contained conceal
   
   syn region mkdLink matchgroup=mkdDelimiter start="\\\@<!\[tasks/" end="\]\ze\s*[[(]" contains=@Spell,mkdEscape nextgroup=mkdURL,mkdID skipwhite oneline concealends cchar=→
+
+  "If we are in a new task file, populate with user story template
+  "if empty(glob(bufname('%')))
+  "  exec "normal! GoAs a \<cr>I want \<cr>so that"
+  "endif
 endfunction
   
 autocmd Filetype mkd :call ScrumMarkdown() 
